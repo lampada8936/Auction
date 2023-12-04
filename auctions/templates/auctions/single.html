@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="border border-dark rounded-top m-0"> {{auction.title}} </h1>
+            <img src="{{ auction.image.url }}" class="card-img-top border border-dark" alt="...">
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="border border-dark border-bottom-0 rounded-top m-0">Lot Details</h1>
+            <p class="border border-dark border-bottom-0 m-0">Lot# {{ auction.id }}</p>
+            <p class="border border-dark  m-0">Content: {{ auction.content }}</p>
+        </div>
+        <div class="col-lg-4 col-sm-6">
+            <h1 class="border border-dark border-bottom-0 rounded-top m-0">Bid information</h1>
+            <p class="border border-dark border-bottom-0 m-0">Bid status:</p>
+            <p class="border border-dark border-bottom-0 m-0">Time left: 3D 5H 21min</p>
+            <p class="border border-dark m-0">Current bid: {{ auction.start_bid}}</p>
+            <form class="border border-dark rounded-bottom border-top-0 m-0">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Your Bid:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
